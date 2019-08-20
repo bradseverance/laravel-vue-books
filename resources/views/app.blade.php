@@ -20,6 +20,6 @@
   <div id="app">
     <bookadmin-component></bookadmin-component>
   </div>
-  <script src="{ URL::to('/js/app.js') }}" type="text/javascript"></script>
+  <script src="{{ URL::to('/js/app.js') }}" type="text/javascript"></script>
   </body>
 </html>
