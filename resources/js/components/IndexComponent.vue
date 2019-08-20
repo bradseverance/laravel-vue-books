@@ -52,14 +52,14 @@
       }
     },
     created () {
-      let uri = `process.env.MIX_APP_URL/api/books`;
+      let uri = `${process.env.MIX_APP_URL}/api/books`;
         this.axios.get(uri).then(response => {
         this.books = response.data.data;
       });
     },
     methods: {
       deleteBook(id) {
-        let uri = `process.env.MIX_APP_URL/api/book/delete/${id}`;
+        let uri = `${process.env.MIX_APP_URL}/api/book/delete/${id}`;
         this.axios.delete(uri).then(response => {
           this.books.splice(this.books.findIndex(book => book.id === id), 1);
         });

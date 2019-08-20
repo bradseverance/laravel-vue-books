@@ -42,6 +42,7 @@
 <script>
   export default {
     data () {
+
       return {
         book: {
 
@@ -51,14 +52,13 @@
     methods: {
 
       addBook () {
+        
 
-        let uri = `process.env.MIX_APP_URL/api/book/create`;
+        let uri = `${process.env.MIX_APP_URL}/api/book/create`;
   
         this.axios.post(uri, this.book).then((response) => {
           this.$router.push({name: 'books'});
         });
-
-        console.log(this.book);
 
       }
 

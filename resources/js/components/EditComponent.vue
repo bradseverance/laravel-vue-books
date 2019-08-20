@@ -51,7 +51,7 @@
 
     created () {
 
-      let uri = `process.env.MIX_APP_URL/api/book/edit/${this.$route.params.id}`;
+      let uri = `${process.env.MIX_APP_URL}/api/book/edit/${this.$route.params.id}`;
 
       this.axios.get(uri).then((response) => {
         this.book = response.data;
@@ -63,7 +63,7 @@
 
       updateBook () {
 
-        let uri = `process.env.MIX_APP_URL/api/book/update/${this.$route.params.id}`;
+        let uri = `${process.env.MIX_APP_URL}/api/book/update/${this.$route.params.id}`;
   
         this.axios.post(uri, this.book).then((response) => {
           this.$router.push({name: 'books'});
