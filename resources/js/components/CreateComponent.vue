@@ -51,13 +51,19 @@
     },
     methods: {
 
-      addBook () {
-        
+      addBook () {        
+
+        // let's trim our inputs first
+        this.book.partno = $.trim(this.book.partno);
+        this.book.title = $.trim(this.book.title);
+        this.book.author = $.trim(this.book.author);        
 
         let uri = `${process.env.MIX_APP_URL}/api/book/create`;
   
         this.axios.post(uri, this.book).then((response) => {
-          this.$router.push({name: 'books'});
+
+          console.log(response);
+          // this.$router.push({name: 'books'});
         });
 
       }
